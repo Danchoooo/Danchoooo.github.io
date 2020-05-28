@@ -53,6 +53,7 @@ li {
   grid-template-columns: 10% 88%;
   grid-column-gap: 2%;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 .butuns2 {
   position: absolute;
@@ -374,35 +375,45 @@ img {
 @keyframes example {
   0% {
     transform: rotateY(90deg);
+    z-index: -1;
   }
   10% {
     transform: rotateY(0deg);
+    z-index: 1;
   }
   50% {
     transform: rotateY(0deg);
+    z-index: 1;
   }
   60% {
     transform: rotateY(90deg);
+    z-index: -1;
   }
   100% {
     transform: rotateY(90deg);
+    z-index: -1;
   }
 }
 @keyframes examples {
   0% {
     transform: rotateY(0deg);
+    z-index: 1;
   }
   10% {
     transform: rotateY(90deg);
+    z-index: -1;
   }
   50% {
     transform: rotateY(90deg);
+    z-index: -1;
   }
   60% {
     transform: rotateY(0deg);
+    z-index: 1;
   }
   100% {
     transform: rotateY(0deg);
+    z-index: 1;
   }
 }
 
@@ -518,8 +529,7 @@ span {
 .slider {
   position: absolute;
   left: 0px;
-  height: 85%;
-
+  height: auto;
   display: flex;
   flex-direction: row;
   transform: translateX(0%);
@@ -734,7 +744,7 @@ span {
 }
 .animate {
   transform: translateX(-100%);
-  animation-name: fillSpace;
+  /*animation-name: fillSpace;*/
   animation-delay: 1s;
   animation-duration: 2s;
   animation-fill-mode: forwards;

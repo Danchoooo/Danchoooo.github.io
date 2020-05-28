@@ -185,6 +185,13 @@ mainCol.addEventListener("click", (e) => {
   console.log(active);
 });
 window.onload = () => {
+  let bio = document.querySelector(".bio");
+  setTimeout(() => {
+    bio.classList.add("animate__animated", "animate__backInDown");
+  }, 1000);
+  setTimeout(() => {
+    bio.classList.remove("animate__animated", "animate__backInDown");
+  }, 2000);
   main.style.animationName = "anime4";
   setTimeout(() => {
     document.querySelector(".gif").classList.add("noShow");
@@ -453,8 +460,10 @@ btn1.addEventListener("click", () => {
   let bio = document.querySelector(".bio");
   setTimeout(() => {
     bio.classList.add("animate__animated", "animate__backInDown");
-    //bio.animateCSS(bio, "animate__backInDown");
-  }, 1000);
+  }, 500);
+  setTimeout(() => {
+    bio.classList.remove("animate__animated", "animate__backInDown");
+  }, 1500);
 
   rotate.forEach((element) => {
     if (element.classList.contains("onScreen")) {
@@ -471,12 +480,26 @@ btn1.addEventListener("click", () => {
 btn2.addEventListener("click", () => {
   let edu = document.querySelector(".edu");
   let exp = document.querySelector(".exp");
+  let animStatistics = document.querySelectorAll(".animate");
+  animStatistics.forEach((element) => {
+    element.style.animationName = "fillSpace";
+    setTimeout(() => {
+      element.style.animationName = "";
+      element.style.transform = "translateX(0%)";
+    }, 3000);
+  });
   setTimeout(() => {
     edu.classList.add("animate__animated", "animate__backInDown");
-  }, 1000);
+  }, 500);
+  setTimeout(() => {
+    edu.classList.remove("animate__animated", "animate__backInDown");
+  }, 1500);
   setTimeout(() => {
     exp.classList.add("animate__animated", "animate__backInDown");
-  }, 1500);
+  }, 1000);
+  setTimeout(() => {
+    exp.classList.remove("animate__animated", "animate__backInDown");
+  }, 2000);
   let output = 0;
   const timer = setInterval(() => {
     let counting = document.querySelector(".count");
