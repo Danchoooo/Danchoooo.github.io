@@ -455,8 +455,10 @@ const mainResume = document.querySelector(".mainResume");
 const portfolio = document.querySelector(".portfolio");
 const blog = document.querySelector(".blog");
 const contact = document.querySelector(".contact");
+const scrollUp = document.querySelector(".window");
 
 btn1.addEventListener("click", () => {
+  scrollUp.scrollTo(0, 0);
   let bio = document.querySelector(".bio");
   setTimeout(() => {
     bio.classList.add("animate__animated", "animate__backInDown");
@@ -478,6 +480,7 @@ btn1.addEventListener("click", () => {
 });
 
 btn2.addEventListener("click", () => {
+  scrollUp.scrollTo(0, 0);
   let edu = document.querySelector(".edu");
   let exp = document.querySelector(".exp");
   let animStatistics = document.querySelectorAll(".animate");
@@ -633,6 +636,7 @@ btn2.addEventListener("click", () => {
 });
 
 btn3.addEventListener("click", () => {
+  scrollUp.scrollTo(0, 0);
   rotate.forEach((element) => {
     if (element.classList.contains("onScreen")) {
       element.style.animationName = "anime11";
@@ -646,6 +650,7 @@ btn3.addEventListener("click", () => {
 });
 
 btn4.addEventListener("click", () => {
+  scrollUp.scrollTo(0, 0);
   rotate.forEach((element) => {
     if (element.classList.contains("onScreen")) {
       element.style.animationName = "anime11";
@@ -659,6 +664,7 @@ btn4.addEventListener("click", () => {
 });
 
 btn5.addEventListener("click", () => {
+  scrollUp.scrollTo(0, 0);
   rotate.forEach((element) => {
     if (element.classList.contains("onScreen")) {
       element.style.animationName = "anime11";
