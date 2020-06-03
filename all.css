@@ -540,11 +540,6 @@ span {
   position: relative;
 }
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> ab1ecb985b35e051b628cb7aaffdc2bcb22954b6
 .slidecontainer {
   z-index: 1;
   position: absolute;
@@ -661,11 +656,9 @@ span {
   height: 85%;
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> ab1ecb985b35e051b628cb7aaffdc2bcb22954b6
 .slider2 {
+  position: absolute;
+  z-index: -1;
   -webkit-appearance: none;
   appearance: none;
   width: 100%;
