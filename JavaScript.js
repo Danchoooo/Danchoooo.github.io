@@ -117,14 +117,29 @@ myRange1.oninput = function () {
   }
 };
 let butuns = document.querySelector(".butuns");
+let myCalc = 0;
 butuns.addEventListener("click", (e) => {
+  console.log(myCalc);
   if (e.target.classList.contains("butunsLeft")) {
     myRange.value = "0";
+    myCalc = 0;
     slideMe.style.transform = `translateX(${myRange.value}%)`;
     console.log(e.target);
   }
-  if (e.target.classList.contains("butunsRight")) {
+  if (e.target.classList.contains("butunsRight") && window.innerWidth > 650) {
     myRange.value = "50";
+    myRange.setAttribute("max", "50");
+    slideMe.style.transform = `translateX(-${myRange.value}%)`;
+    console.log(e.target);
+  }
+  if (
+    e.target.classList.contains("butunsRight") &&
+    window.innerWidth <= 650 &&
+    myCalc < 200
+  ) {
+    myRange.value += "100";
+    myRange.setAttribute("max", "200");
+    myCalc += 100;
     slideMe.style.transform = `translateX(-${myRange.value}%)`;
     console.log(e.target);
   }
@@ -695,3 +710,21 @@ btn5.addEventListener("click", () => {
 
     node.addEventListener("animationend", handleAnimationEnd);
   });*/
+let smMenu = document.querySelector(".leftNav");
+smMenu.addEventListener("click", () => {
+  let sidebar = document.querySelector(".sidebar");
+  if (sidebar.style.transform === "translateX(-120%)") {
+    sidebar.style.transform = "translateX(0%)";
+  } else {
+    sidebar.style.transform = "translateX(-120%)";
+  }
+  console.log(sidebar);
+});
+window.onresize = () => {
+  let sidebar = document.querySelector(".sidebar");
+  if (window.innerWidth > 1150) {
+    sidebar.style.transform = "translateX(0%)";
+
+    console.log(window.innerWidth);
+  }
+};

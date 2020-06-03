@@ -9,6 +9,7 @@ body {
   height: 100vh;
   background-color: ghostwhite;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 button:hover {
   cursor: pointer;
@@ -49,6 +50,49 @@ li {
     background-color: white;
   }
 }*/
+.smNav {
+  background-color: cornflowerblue;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  display: none;
+}
+.leftNav {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 20px;
+}
+.leftNav > div {
+  margin-bottom: 3px;
+  width: 30px;
+  height: 0px;
+  border: 1px solid black;
+}
+.rightNav {
+  height: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+.rightNav > img {
+  height: 90%;
+  width: auto;
+  margin-right: 10px;
+}
+.rightNav > span {
+  font-size: 1rem;
+  color: black;
+  font-weight: bolder;
+}
 .all {
   position: relative;
   height: 100vh;
@@ -60,11 +104,12 @@ li {
 }
 
 .butuns2 {
+  display: none;
   position: absolute;
   z-index: 5;
-  right: 20px;
-  bottom: 0px;
-  width: 5%;
+  right: 100px;
+  width: 70px;
+  bottom: 5px;
   height: 5%;
 }
 .butuns2 > button {
@@ -89,6 +134,11 @@ li {
   background-color: white;
   position: sticky;
   top: 0px;
+  transition: transform 0.5s;
+  transition-timing-function: ease-in-out;
+}
+.sidebarToggle {
+  transform: translateX(0%);
 }
 .sidebar > div > img {
   width: 80%;
@@ -196,7 +246,7 @@ footer {
   width: 150px;
   height: 180px;
   border: transparent;
-  z-index: 3;
+  z-index: 999;
 }
 .palet > p {
   margin: 3px 0px;
@@ -298,6 +348,9 @@ footer {
 }
 @keyframes anime4 {
   0% {
+    transform: scale(0) translateX(200%);
+  }
+  1% {
     transform: scale(0.5) translateX(200%);
   }
   50% {
@@ -314,17 +367,19 @@ footer {
   50% {
     transform: scale(0.5) translateX(0%);
   }
-  100% {
+  99% {
     transform: scale(0.5) translateX(200%);
+  }
+  100% {
+    transform: scale(0) translateX(200%);
   }
 }
 
 .window {
   background-color: white;
   position: relative;
-  height: 100vh;
-  width: 100%;
   height: auto;
+  width: 100%;
 
   overflow-y: auto;
   overflow-x: hidden;
@@ -348,6 +403,7 @@ footer {
   animation-timing-function: ease-in;
   animation-fill-mode: forwards;
   overflow-x: hidden;
+  z-index: 1;
 }
 .interduction {
   width: 100%;
@@ -362,6 +418,20 @@ img {
 .img1 {
   width: 100%;
   height: 100%;
+}
+@keyframes animImg {
+  0% {
+    box-shadow: 20px 20px 15px grey;
+    transform: perspective(700px) rotateY(-35deg) scale(1, 1);
+  }
+  50% {
+    box-shadow: 40px 40px 15px grey;
+    transform: perspective(600px) rotateY(-30deg) scale(1.02, 1.02);
+  }
+  100% {
+    box-shadow: 20px 20px 15px grey;
+    transform: perspective(700px) rotateY(-35deg) scale(1, 1);
+  }
 }
 .anim1 {
   position: relative;
@@ -469,8 +539,6 @@ span {
   overflow: hidden;
   position: relative;
 }
-
-/*w3schools*/
 
 .slidecontainer {
   z-index: 1;
@@ -588,7 +656,6 @@ span {
   height: 85%;
 }
 
-/* The slider itself */
 .slider2 {
   -webkit-appearance: none;
   appearance: none;
@@ -669,11 +736,11 @@ span {
 .mainResume {
   position: absolute;
   top: 0px;
-  width: 100%;
   height: auto;
   background-color: white;
   width: 95%;
   margin-left: 2.5%;
+  z-index: 2;
   /* animation-name: anime;*/
   animation-duration: 1s;
   animation-timing-function: ease-in;
@@ -842,12 +909,12 @@ span {
 .portfolio {
   position: absolute;
   top: 0px;
-  width: 100%;
   margin: auto;
   background-color: white;
   padding: 2.5% 0%;
   width: 95%;
   margin-left: 2.5%;
+  z-index: 3;
   /*animation-name: anime1;*/
   animation-duration: 1s;
   animation-timing-function: ease-in;
@@ -983,6 +1050,7 @@ span {
   padding-top: 2.5%;
   background-color: white;
   margin-bottom: 5%;
+  z-index: 4;
   /*animation-name: anime1;*/
   animation-duration: 1s;
   animation-timing-function: ease-in;
@@ -1062,6 +1130,8 @@ span {
   height: auto;
   background-color: white;
   padding-top: 2.5%;
+  margin-bottom: 10%;
+  z-index: 5;
   /*animation-name: anime1;*/
   animation-duration: 1s;
   animation-timing-function: ease-in;
@@ -1085,12 +1155,15 @@ span {
   align-items: center;
   justify-content: space-between;
   padding: 5% 0%;
+  box-sizing: border-box;
 }
 .icons > div > i {
   font-size: 3rem;
+  box-sizing: border-box;
 }
 .icons > div > p {
   margin: 0;
+  box-sizing: border-box;
 }
 .form {
   height: 100%;
@@ -1101,6 +1174,10 @@ span {
   align-items: left;
   justify-self: center;
   margin: auto;
+  border: transparent;
+}
+.form > h2 {
+  margin-bottom: 5%;
 }
 .underline {
   text-decoration: underline tomato;
@@ -1110,10 +1187,22 @@ span {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 3%;
-  margin-bottom: 3%;
+  margin-bottom: 5%;
+  box-sizing: border-box;
 }
 .textArea {
+  width: 100%;
+  height: auto;
   position: relative;
+  box-sizing: border-box;
+  bottom: 0px;
+  box-sizing: border-box;
+}
+textarea {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0px;
 }
 .input4 {
   position: absolute;
@@ -1144,10 +1233,11 @@ span {
   position: relative;
   width: 100%;
   height: 100%;
+  border: none;
 }
 .inputs > div > span {
   position: absolute;
-  bottom: 0px;
+  bottom: 1px;
   width: 100%;
   height: 0px;
   border-bottom: 3px solid red;
@@ -1186,7 +1276,7 @@ span {
 
 .inputs > div > input {
   position: absolute;
-  bottom: 0px;
+  bottom: 1px;
   z-index: 1;
   height: 90%;
   width: 100%;
@@ -1217,6 +1307,7 @@ form > input {
   transition-timing-function: ease-in-out;
   padding: auto;
   text-align: center;
+  z-index: 1;
 }
 .form > h2 {
   border: none;
@@ -1224,4 +1315,191 @@ form > input {
 form > input:hover {
   background-color: tomato;
   color: white;
+}
+
+@media screen and (max-width: 1150px) {
+  .smNav {
+    display: flex;
+  }
+  .sidebar {
+    width: 200%;
+    transform: translateX(0%);
+    z-index: 999;
+  }
+  .window {
+    transform: translateX(-15%);
+    width: 110vw;
+  }
+  .main {
+    margin-bottom: 5%;
+  }
+  .mainResume {
+    width: 85%;
+    margin-left: 7.5%;
+    margin-bottom: 5%;
+  }
+  .interduction {
+    margin-bottom: 0%;
+  }
+  .portfolio {
+    width: 85%;
+    margin-left: 7.5%;
+  }
+  .media {
+    grid-template-columns: repeat(2, 1fr);
+    padding-bottom: 10%;
+  }
+  .filter {
+    justify-content: center;
+  }
+  .filters {
+    width: 80%;
+    justify-content: space-between;
+  }
+  .blog {
+    width: 85%;
+    margin-left: 7.5%;
+  }
+  .contact {
+    width: 85%;
+    margin-left: 7.5%;
+  }
+}
+@media screen and (max-width: 930px) {
+  .sidebar {
+    width: 250%;
+  }
+  footer {
+    margin-bottom: 25%;
+  }
+  .interduction {
+    grid-template-columns: 1fr;
+  }
+  .img1 {
+    width: 100%;
+    background-color: white;
+  }
+  .img1 > img {
+    backface-visibility: visible;
+    transform-origin: 50% 50%;
+    transform: perspective(700px) rotateY(-35deg);
+    border: 1px solid grey;
+    box-shadow: 20px 20px 15px grey;
+    overflow: hidden;
+    animation-name: animImg;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+  }
+  .bio {
+    padding: 5% 10%;
+  }
+  .bio > button {
+    height: 40px;
+    width: 20%;
+  }
+  .testimonials {
+    height: 7rem;
+  }
+  .clients {
+    margin-bottom: 10%;
+  }
+  .form {
+    width: 95%;
+  }
+  .map {
+    height: 50vh;
+  }
+  iframe {
+    height: 100%;
+  }
+  .blog {
+    margin-bottom: 10%;
+  }
+  .contact {
+    margin-bottom: 10%;
+  }
+}
+@media screen and (max-width: 650px) {
+  .main {
+    margin-bottom: 15%;
+  }
+  .main > h1 {
+    width: 40%;
+  }
+  .bio > button {
+    width: 30%;
+  }
+  .sidebar {
+    width: 300%;
+  }
+  footer {
+    margin-bottom: 30%;
+  }
+  .mainResume {
+    margin-bottom: 10%;
+  }
+  .mainResume > button {
+    width: 25%;
+  }
+  .icons {
+    height: auto;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 5%;
+  }
+  .slider > img {
+    width: 99%;
+    height: auto;
+  }
+  .main1 {
+    grid-template-columns: 1fr;
+  }
+  .eduExp:nth-child(1) {
+    order: 2;
+  }
+  .portfolio {
+    margin-bottom: 10%;
+  }
+  .filters {
+    padding: 0%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .contact {
+    margin-bottom: 15%;
+  }
+  form > input {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .sidebar {
+    width: 500%;
+  }
+  .whatIdo {
+    grid-template-columns: 1fr;
+  }
+  .portfolio {
+    margin-bottom: 50%;
+  }
+  .media {
+    grid-template-columns: 1fr;
+  }
+  .blog {
+    margin-bottom: 25%;
+  }
+  .album {
+    grid-template-columns: 1fr;
+  }
+  .icons {
+    height: auto;
+    grid-template-columns: 1fr;
+    margin-bottom: 20%;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .contact {
+    margin-bottom: 20%;
+  }
 }
