@@ -33,23 +33,6 @@ li {
   justify-content: center;
   align-items: center;
 }
-/*.blackWhite {
-  animation-name: blackWhite;
-  animation-duration: 2s;
-  animation-timing-function: ease-in;
-}
-
-@keyframes blackWhite {
-  0% {
-    background-color: black;
-  }
-  75% {
-    background-color: black;
-  }
-  100% {
-    background-color: white;
-  }
-}*/
 .smNav {
   background-color: cornflowerblue;
   height: 50px;
@@ -59,6 +42,7 @@ li {
   align-items: center;
   text-align: center;
   display: none;
+  z-index: 999;
 }
 .leftNav {
   height: 50%;
@@ -67,6 +51,7 @@ li {
   justify-content: space-around;
   align-items: center;
   margin-left: 20px;
+  cursor: pointer;
 }
 .leftNav > div {
   margin-bottom: 3px;
@@ -140,10 +125,18 @@ li {
 .sidebarToggle {
   transform: translateX(0%);
 }
+.sidebar > div {
+  margin-bottom: 10%;
+}
 .sidebar > div > img {
   width: 80%;
   height: auto;
-  margin-top: 10%;
+  margin: 10% auto;
+}
+.sidebar > div > h2 {
+  text-decoration: solid;
+  font-weight: 900;
+  margin: 0px auto;
 }
 .sidebar > ul {
   padding: 0%;
@@ -174,6 +167,7 @@ li {
   justify-content: center;
   align-items: center;
   font-weight: bolder;
+  font-weight: 500;
 }
 .pasiv:hover {
   background-color: rgba(235, 235, 240, 0.281);
@@ -239,9 +233,15 @@ footer {
   margin: 5px 0px;
   color: rgb(169, 169, 173);
 }
+.move > .ul2 {
+  display: none;
+}
+.move > footer {
+  display: none;
+}
 .palet {
   position: fixed;
-  top: 53%;
+  top: 30%;
   right: 0%;
   width: 150px;
   height: 180px;
@@ -727,7 +727,7 @@ span {
   width: 20%;
   text-decoration: underline tomato;
   margin-left: 5%;
-  text-align: center;
+  text-align: left;
 }
 .noShow {
   display: none;
@@ -937,7 +937,7 @@ span {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  width: 45%;
+  width: 55%;
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -1503,5 +1503,34 @@ form > input:hover {
   }
   .contact {
     margin-bottom: 20%;
+  }
+}
+@media screen and (max-height: 550px) {
+  .sidebar {
+    justify-content: flex-start;
+  }
+  .sidebar > .ul2 {
+    display: none;
+  }
+  .sidebar > footer {
+    display: none;
+  }
+  .palet {
+    width: 200px;
+    height: 250px;
+  }
+  .move > .ul2 {
+    display: flex;
+    padding-left: 0px;
+    height: 15%;
+  }
+  .move > footer {
+    display: block;
+  }
+  .mainCol > div {
+    width: 100%;
+  }
+  .hideMove {
+    transform: translateX(200px);
   }
 }

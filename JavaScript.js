@@ -1,3 +1,5 @@
+//**Toggle Color Palet**
+
 let move = document.querySelector(".move");
 let moveButton = document.querySelector(".palet>p>button");
 let palet = document.querySelector(".palet");
@@ -5,16 +7,12 @@ moveButton.addEventListener("click", () => {
   move.classList.toggle("hideMove");
 });
 
+// **Portfolio Filter**
+
 let filters = document.querySelectorAll(".filters>div>li");
 filters.forEach((element) => {
   element.addEventListener("click", () => {
     console.log(element.innerText);
-    /*let actived = document.querySelectorAll(".actived");
-    actived[0].className = actived[0].className.replace(" actived", " pasiv");
-    actived[0].className = actived[0].className.replace(bojca, "");
-    element.classList.add("actived");
-    element.classList.add(bojca);
-    element.classList.remove("pasiv");*/
     let filterMe = document.querySelectorAll(".space");
     filterMe.forEach((element1) => {
       console.log(element1);
@@ -35,6 +33,7 @@ filters.forEach((element) => {
   });
 });
 
+//** Contact form animate the inputs on fokus **
 let contactMe = document.querySelectorAll(".inputs>div>input");
 contactMe.forEach((element) => {
   element.addEventListener("focusin", () => {
@@ -96,6 +95,8 @@ input4.addEventListener("focusout", () => {
   }, 500);
 });
 
+// **Making Img Slider Uesing Range Input **
+
 let myRange = document.getElementById("myRange");
 let slideMe = document.querySelector(".slider");
 slideMe.style.transform = `translateX(${myRange.value}%)`;
@@ -116,6 +117,9 @@ myRange1.oninput = function () {
     slideMe1.classList.remove("transitionSlider");
   }
 };
+
+// ** Adding Funcsionality To The Slider Buttons **
+
 let butuns = document.querySelector(".butuns");
 let myCalc = 0;
 butuns.addEventListener("click", (e) => {
@@ -162,6 +166,8 @@ butuns1.addEventListener("click", (e) => {
   console.log(myRange1.value);
 });
 
+// ** Changenig The Color From The Palet On the Main Menu**
+
 let mainCol = document.querySelector(".mainCol");
 let boja = "tomatoColor";
 let bojca = "tomatoColor";
@@ -199,6 +205,9 @@ mainCol.addEventListener("click", (e) => {
   active.classList.replace(classes, boja);
   console.log(active);
 });
+
+// ** Adding Some Classes And Animations On Window Load **
+
 window.onload = () => {
   let bio = document.querySelector(".bio");
   setTimeout(() => {
@@ -214,9 +223,6 @@ window.onload = () => {
   setTimeout(() => {
     document.querySelector(".all").classList.remove("noShow");
   }, 20);
-  /* setTimeout(() => {
-    document.querySelector(".all").classList.remove("blackWhite");
-  }, 2000);*/
   document.querySelectorAll(".rotateBtn")[0].classList.add("active");
   document.querySelectorAll(".rotateBtn")[0].classList.add(boja);
   rotateBtn.forEach((element) => {
@@ -230,6 +236,8 @@ window.onload = () => {
     });
   });
 };
+
+// ** Changenig The Color From The Palet On The Elements **
 
 let blue = document.querySelector(".blue");
 let tomato = document.querySelector(".tomato");
@@ -456,7 +464,7 @@ yelow.addEventListener("click", () => {
   return active;
 });
 
-//Animiranje na stranite
+// ** Animate The Chosen Page From The Main Menue **
 
 let btn1 = document.querySelector(".btn1");
 let btn2 = document.querySelector(".btn2");
@@ -471,6 +479,7 @@ const portfolio = document.querySelector(".portfolio");
 const blog = document.querySelector(".blog");
 const contact = document.querySelector(".contact");
 const scrollUp = document.querySelector(".window");
+let googleMap = document.querySelector(".map");
 
 btn1.addEventListener("click", () => {
   scrollUp.scrollTo(0, 0);
@@ -481,23 +490,23 @@ btn1.addEventListener("click", () => {
   setTimeout(() => {
     bio.classList.remove("animate__animated", "animate__backInDown");
   }, 1500);
+  setTimeout(() => {
+    googleMap.classList.add("noShow");
+  }, 1000);
 
   rotate.forEach((element) => {
     if (element.classList.contains("onScreen")) {
       element.style.animationName = "anime11";
-      //element.style.display = "none";
       element.classList.remove("onScreen");
     }
   });
   main.classList.add("onScreen");
-  //main.style.display = "block";
   main.style.animationName = "anime4";
 });
 
 btn2.addEventListener("click", () => {
-  scrollUp.scrollTo(0, 0);
-  let edu = document.querySelector(".edu");
-  let exp = document.querySelector(".exp");
+  scrollUp.scrollTo(0, 0); // Breang Page Up On Call
+  // Animate Statistics Bars on Call
   let animStatistics = document.querySelectorAll(".animate");
   animStatistics.forEach((element) => {
     element.style.animationName = "fillSpace";
@@ -506,6 +515,9 @@ btn2.addEventListener("click", () => {
       element.style.transform = "translateX(0%)";
     }, 3000);
   });
+  //Animate Page Elements On Call
+  let edu = document.querySelector(".edu");
+  let exp = document.querySelector(".exp");
   setTimeout(() => {
     edu.classList.add("animate__animated", "animate__backInDown");
   }, 500);
@@ -518,6 +530,11 @@ btn2.addEventListener("click", () => {
   setTimeout(() => {
     exp.classList.remove("animate__animated", "animate__backInDown");
   }, 2000);
+  setTimeout(() => {
+    googleMap.classList.add("noShow");
+  }, 1000);
+
+  // Animate The Prosentige Output Count
   let output = 0;
   const timer = setInterval(() => {
     let counting = document.querySelector(".count");
@@ -642,77 +659,63 @@ btn2.addEventListener("click", () => {
     if (element.classList.contains("onScreen")) {
       element.style.animationName = "anime11";
       element.classList.remove("onScreen");
-      // element.style.display = "none";
     }
   });
   mainResume.classList.add("onScreen");
-  //mainResume.style.display = "block";
   mainResume.style.animationName = "anime4";
 });
 
 btn3.addEventListener("click", () => {
   scrollUp.scrollTo(0, 0);
+  setTimeout(() => {
+    googleMap.classList.add("noShow");
+  }, 1000);
+
   rotate.forEach((element) => {
     if (element.classList.contains("onScreen")) {
       element.style.animationName = "anime11";
       element.classList.remove("onScreen");
-      //element.style.display = "none";
     }
   });
   portfolio.classList.add("onScreen");
-  //portfolio.style.display = "block";
   portfolio.style.animationName = "anime4";
 });
 
 btn4.addEventListener("click", () => {
   scrollUp.scrollTo(0, 0);
+  setTimeout(() => {
+    googleMap.classList.add("noShow");
+  }, 1000);
+
   rotate.forEach((element) => {
     if (element.classList.contains("onScreen")) {
       element.style.animationName = "anime11";
       element.classList.remove("onScreen");
-      //element.style.display = "none";
     }
   });
   blog.classList.add("onScreen");
-  //blog.style.display = "block";
   blog.style.animationName = "anime4";
 });
 
 btn5.addEventListener("click", () => {
+  googleMap.classList.remove("noShow");
   scrollUp.scrollTo(0, 0);
   rotate.forEach((element) => {
     if (element.classList.contains("onScreen")) {
       element.style.animationName = "anime11";
       element.classList.remove("onScreen");
-      // element.style.display = "none";
     }
   });
   contact.classList.add("onScreen");
-  //contact.style.display = "block";
   contact.style.animationName = "anime4";
 });
 
-/*const animateCSS = (element, animation, prefix = "animate__") =>
-  // We create a Promise and return it
-  new Promise((resolve, reject) => {
-    const animationName = `${prefix}${animation}`;
-    const node = document.querySelector(element);
+// ** Responsive Menu For Small Screanv **
 
-    node.classList.add(`${prefix}animated`, animationName);
-
-    // When the animation ends, we clean the classes and resolve the Promise
-    function handleAnimationEnd() {
-      node.classList.remove(`${prefix}animated`, animationName);
-      node.removeEventListener("animationend", handleAnimationEnd);
-
-      resolve("Animation ended");
-    }
-
-    node.addEventListener("animationend", handleAnimationEnd);
-  });*/
+let sidebar = document.querySelector(".sidebar");
 let smMenu = document.querySelector(".leftNav");
-smMenu.addEventListener("click", () => {
-  let sidebar = document.querySelector(".sidebar");
+smMenu.addEventListener("click", (e) => {
+  e.preventDefault;
   if (sidebar.style.transform === "translateX(-120%)") {
     sidebar.style.transform = "translateX(0%)";
   } else {
@@ -720,11 +723,18 @@ smMenu.addEventListener("click", () => {
   }
   console.log(sidebar);
 });
+
 window.onresize = () => {
-  let sidebar = document.querySelector(".sidebar");
   if (window.innerWidth > 1150) {
     sidebar.style.transform = "translateX(0%)";
-
-    console.log(window.innerWidth);
+  }
+  if (window.innerWidth > 650) {
+    slideMe.style.transform = "translateX(0%)";
   }
 };
+let mainMenue = document.querySelector(".ul1");
+mainMenue.addEventListener("click", (e) => {
+  if (e.target.tagName === "A" && window.innerWidth <= 1150) {
+    sidebar.style.transform = "translateX(-120%)";
+  }
+});
