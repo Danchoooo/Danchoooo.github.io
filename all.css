@@ -1534,3 +1534,14 @@ form > input:hover {
     transform: translateX(200px);
   }
 }
+@media screen and (max-height: 425px) {
+  .sidebar {
+    justify-content: flex-start;
+  }
+  .ul1 {
+    height: 80%;
+  }
+  .sidebar > div {
+    display: none;
+  }
+}
