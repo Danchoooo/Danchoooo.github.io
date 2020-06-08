@@ -33,19 +33,19 @@
         <h2>Jovanovski</h2>
       </div>
       <ul class="ul1">
-        <li class="btn1 rotateBtn">
+        <li class="btn1 rotateBtn" id = 'main'>
             <a href="#main" target="">About Me</a>
         </li>
-        <li class="pasiv btn2 rotateBtn">
+        <li class="pasiv btn2 rotateBtn" id = 'mainResume'>
           <a href="#mainResume" target="">Resume</a>
         </li>
-        <li class="pasiv btn3 rotateBtn">
+        <li class="pasiv btn3 rotateBtn" id = 'portfolio'>
             <a href="#portfolio" target="">Portfolio</a>
         </li>
-        <li class="pasiv btn4 rotateBtn">
+        <li class="pasiv btn4 rotateBtn" id = 'blog'>
           <a href="#blog" target="">Blog</a>
         </li>
-        <li class="pasiv btn5 rotateBtn">
+        <li class="pasiv btn5 rotateBtn" id = 'contact'>
           <a href="#contact" target="">Contact</a>
         </li>
       </ul>
@@ -238,45 +238,45 @@
           <div class="skils">
             <h2 class="title underline">Design Skills</h2>
             <div>
-            <p>Web Design <span class="count count1" title = "95">0<span>%</span></span></p>
+            <p>Web Design <span class="count count1" title = "95">0</span></p>
             <div class="stat"><div class="stat1 animate"></div></div>
           </div>
           <div>
-            <p>Print Design <span class="count count2" title = '65'>0<span>%</span></span></p>
+            <p>Print Design <span class="count count2" title = '65'>0</span></p>
 
             <div class="stat"><div class="stat2 animate"></div></div>
           </div>
           <div>
-            <p>Logo Design <span class="count count3" title = '80'>0<span>%</span></span></p>
+            <p>Logo Design <span class="count count3" title = '80'>0</span></p>
             <div class="stat"><div class="stat3 animate"></div></div>
           </div>
           <div>
-            <p>Graphic Design <span class="count count4" title = '90'>0<span>%</span></span></p>
+            <p>Graphic Design <span class="count count4" title = '90'>0</span></p>
             <div class="stat"><div class="stat4 animate"></div></div>
           </div>
             <h2 class="title underline">Coding Skills</h2>
             <div>
-            <p>JavaScript <span class="count count5" title = '85'>0<span>%</span></span></p>
+            <p>JavaScript <span class="count count5" title = '85'>0</span></p>
             <div class="stat"><div class="stat5 animate"></div></div>
           </div>
           <div>
-            <p>PHP <span class="count count6" title = '70'>0<span>%</span></span></p>
+            <p>PHP <span class="count count6" title = '70'>0</span></p>
             <div class="stat"><div class="stat6 animate"></div></div>
           </div>
           <div>
-            <p>Python <span class="count count7" title = '60'>0<span>%</span></span></p>
+            <p>Python <span class="count count7" title = '60'>0</span></p>
             <div class="stat"><div class="stat7 animate"></div></div>
           </div>
           <div>
-            <p>Perl <span class="count count8" title = '75'>0<span>%</span></span></p>
+            <p>Perl <span class="count count8" title = '75'>0</span></p>
             <div class="stat"><div class="stat8 animate"></div></div>
           </div>
           <div>
-            <p>HTML / CSS <span class="count count9" title = '100'>0<span>%</span></span></p>
+            <p>HTML / CSS <span class="count count9" title = '100'>0</span></p>
             <div class="stat"><div class="stat9 animate"></div></div>
           </div>
           <div>
-            <p>Smarty / Twig <span class="count count10" title = '80'>0<span>%</span></span></p>
+            <p>Smarty / Twig <span class="count count10" title = '80'>0</span></p>
             <div class="stat"><div class="stat10 animate"></div></div>
           </div>
           </div>
@@ -434,21 +434,21 @@
             <div class="grid">
               <div class="inputs">
                 <div>
-                <input class="input1 inputEdit" type="text" name="name" placeholder="Full Name" />
-                <span class="focus1"></span>
+                <input class="input1 inputEdit focusEffect" type="text" required = 'required' name="name" placeholder="Full Name" />
+                <span class="focus1 animateOnFocus"></span>
               </div>
               <div>
-                <input class="input2 inputEdit" type="email" name="email" placeholder="Email Address" />
-                <span class="focus2"></span>
+                <input class="input2 inputEdit focusEffect" type="email" required = 'required' name="email" placeholder="Email Address" />
+                <span class="focus2 animateOnFocus"></span>
               </div>
               <div>
-                <input class="input3 inputEdit" type="text" name="subject" placeholder="Subject" />
-                <span class="focus3"></span>
+                <input class="input3 inputEdit focusEffect" type="text" required = 'required' name="subject" placeholder="Subject" />
+                <span class="focus3 animateOnFocus"></span>
               </div>
               </div>
               <div class="textArea">
-                <textarea class="input4" name="Mesage" id="" placeholder="Message"></textarea>
-                <span class="focus4"></span>
+                <textarea class="input4 focusEffect" name="Mesage" required = 'required' id="" placeholder="Message"></textarea>
+                <span class="focus4 animateOnFocus"></span>
               </div>
             </div>
            <!-- <div
@@ -467,12 +467,12 @@
         <div class="move hideMove">
           <h3>Main Color</h3>
           <div class="mainCol">
-            <div class="blue size"><i class="fas fa-check"></i></div>
-            <div class="tomato size"><i class="fas fa-check"></i></div>
-            <div class="orange size"><i class="fas fa-check"></i></div>
-            <div class="green size"><i class="fas fa-check"></i></div>
-            <div class="violet size"><i class="fas fa-check"></i></div>
-            <div class="yelow size"><i class="fas fa-check"></i></div>
+            <div class="blue size"><p class="noShow"><i class="fas fa-check"></i></p></div>
+            <div class="tomato size"><p><i class="fas fa-check"></i></p></div>
+            <div class="orange size"><p class="noShow"><i class="fas fa-check"></i></p></div>
+            <div class="green size"><p class="noShow"><i class="fas fa-check"></i></p></div>
+            <div class="violet size"><p class="noShow"><i class="fas fa-check"></i></p></div>
+            <div class="goldenrod size"><p class="noShow"><i class="fas fa-check"></i></p></div>
           </div>
           <ul class="ul2">
             <li>
@@ -491,6 +491,6 @@
    </div>
    <div class="butuns2"><button class="button">&lt</button><button class="button">&gt</button></div>
    <!--<script async src="https://platform-api.sharethis.com/js/sharethis.js#property=5ed153717cfa4a0012b476fd&product=sticky-share-buttons"></script>-->
-    <script src="JavaScript.js"></script>
+    <script src="NewScript.js"></script>
   </body>
 </html>

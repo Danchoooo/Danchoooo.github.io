@@ -36,7 +36,6 @@ li {
 .smNav {
   background-color: cornflowerblue;
   height: 50px;
-  display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -122,6 +121,7 @@ li {
   transition: transform 0.5s;
   transition-timing-function: ease-in-out;
 }
+
 .sidebarToggle {
   transform: translateX(0%);
 }
@@ -265,14 +265,17 @@ footer {
   transform: rotateZ(360deg);
 }
 .size {
+  display: flex;
   width: 35px;
   height: 30px;
   border: transparent;
   text-align: center;
 }
-.size > i {
-  margin-top: 6px;
-  display: none;
+.size > p > i {
+  color: white;
+}
+.size > p {
+  margin: auto;
 }
 .mainCol {
   display: grid;
@@ -296,7 +299,7 @@ footer {
 .violet {
   background-color: violet;
 }
-.yelow {
+.goldenrod {
   background-color: goldenrod;
 }
 /*JS klasi za funkcionalnost*/
@@ -316,7 +319,7 @@ footer {
 .violetColor {
   border-right: violet 1px solid;
 }
-.yellowColor {
+.goldenrodColor {
   border-right: goldenrod 1px solid;
 }
 
@@ -887,7 +890,11 @@ span {
   width: 80%;
   border-radius: 5px;
 }
+.skils > div {
+  margin-bottom: 5%;
+}
 .skils > div > p {
+  width: 95%;
   margin: 0px;
   display: flex;
   flex-direction: row;
@@ -1320,6 +1327,9 @@ form > input:hover {
 }
 
 @media screen and (max-width: 1150px) {
+  .all {
+    height: 90%;
+  }
   .smNav {
     display: flex;
   }
@@ -1329,6 +1339,7 @@ form > input:hover {
     z-index: 999;
   }
   .window {
+    height: 90%;
     transform: translateX(-15%);
     width: 110vw;
   }
@@ -1506,6 +1517,12 @@ form > input:hover {
   }
 }
 @media screen and (max-height: 550px) {
+  .all {
+    height: 85%;
+  }
+  .window {
+    height: 85%;
+  }
   .sidebar {
     justify-content: flex-start;
   }
