@@ -1328,18 +1328,21 @@ form > input:hover {
 
 @media screen and (max-width: 1150px) {
   .all {
-    height: 90%;
+    height: 93vh;
   }
   .smNav {
+    position: relative;
+    top: 0px;
     display: flex;
   }
   .sidebar {
+    height: 93vh;
     width: 200%;
     transform: translateX(0%);
     z-index: 999;
   }
   .window {
-    height: 90%;
+    height: 93vh;
     transform: translateX(-15%);
     width: 110vw;
   }
