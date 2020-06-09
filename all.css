@@ -1331,6 +1331,7 @@ form > input:hover {
     height: 93vh;
   }
   .smNav {
+    height: 7vh;
     position: relative;
     top: 0px;
     display: flex;
@@ -1520,11 +1521,17 @@ form > input:hover {
   }
 }
 @media screen and (max-height: 550px) {
+  .palet {
+    top: 15%;
+  }
+  .smNav {
+    height: 13vh;
+  }
   .all {
-    height: 85%;
+    height: 87vh;
   }
   .window {
-    height: 85%;
+    height: 87vh;
   }
   .sidebar {
     justify-content: flex-start;
