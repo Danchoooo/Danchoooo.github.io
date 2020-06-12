@@ -1,6 +1,23 @@
 "use strict";
 
-//**Toggle Color Pallet**
+var active = document.querySelector(".active");
+var button = document.querySelectorAll(".button");
+var underline = document.querySelectorAll(".underline");
+var links = document.querySelectorAll(".links");
+var stat = document.querySelectorAll(".stat");
+var animate = document.querySelectorAll(".animate");
+var circle = document.querySelectorAll(".cirkle");
+var rotate = document.querySelectorAll(".rotate");
+var rotateBtn = document.querySelectorAll(".rotateBtn");
+var main = document.querySelector(".main");
+var mainResume = document.querySelector(".mainResume");
+var portfolio = document.querySelector(".portfolio");
+var blog = document.querySelector(".blog");
+var contact = document.querySelector(".contact");
+var scrollUp = document.querySelector(".window");
+var googleMap = document.querySelector(".map");
+var countMe = document.querySelectorAll(".count"); //**Toggle Color Pallet**
+
 var move = document.querySelector(".move");
 var moveButton = document.querySelector(".palet>p>button");
 var palet = document.querySelector(".palet");
@@ -70,6 +87,7 @@ myRange1.oninput = function () {
   }
 }; // ** Adding Functionality To The Slider Buttons **
 
+
 var butuns = document.querySelector(".butuns");
 var myCalc = 0;
 butuns.addEventListener("click", function (e) {
@@ -81,17 +99,11 @@ butuns.addEventListener("click", function (e) {
 
   if (e.target.classList.contains("butunsRight") && window.innerWidth > 650) {
     myRange.value = "50";
-    myRange.setAttribute("max", "50");
     slideMe.style.transform = "translateX(-".concat(myRange.value, "%)");
   }
 
-  if (
-    e.target.classList.contains("butunsRight") &&
-    window.innerWidth <= 650 &&
-    myCalc < 200
-  ) {
+  if (e.target.classList.contains("butunsRight") && window.innerWidth <= 650 && myCalc < 200) {
     myRange.value += "100";
-    myRange.setAttribute("max", "200");
     myCalc += 100;
     slideMe.style.transform = "translateX(-".concat(myRange.value, "%)");
   }
@@ -167,6 +179,14 @@ mainCol.addEventListener("click", function (e) {
 }); // ** Adding Some Classes And Animations On Window Load **
 
 window.onload = function () {
+  if (window.innerWidth > 650) {
+    myRange.setAttribute("max", "50");
+  }
+
+  if (window.innerWidth <= 650) {
+    myRange.setAttribute("max", "200");
+  }
+
   var bio = document.querySelector(".bio");
   setTimeout(function () {
     bio.classList.add("animate__animated", "animate__backInDown");
@@ -195,25 +215,10 @@ window.onload = function () {
   });
 }; // ** Changing The Color From The Pallet On The Elements **
 
-var active = document.querySelector(".active");
-var button = document.querySelectorAll(".button");
-var underline = document.querySelectorAll(".underline");
-var links = document.querySelectorAll(".links");
-var stat = document.querySelectorAll(".stat");
-var animate = document.querySelectorAll(".animate");
-var circle = document.querySelectorAll(".cirkle");
-var rotate = document.querySelectorAll(".rotate");
-var rotateBtn = document.querySelectorAll(".rotateBtn");
-var main = document.querySelector(".main");
-var mainResume = document.querySelector(".mainResume");
-var portfolio = document.querySelector(".portfolio");
-var blog = document.querySelector(".blog");
-var contact = document.querySelector(".contact");
-var scrollUp = document.querySelector(".window");
-var googleMap = document.querySelector(".map");
-var countMe = document.querySelectorAll(".count");
+
 rotateBtn.forEach(function (element) {
   element.addEventListener("click", function () {
+    window.scrollTo(0, 0);
     scrollUp.scrollTo(0, 0);
     rotate.forEach(function (element1) {
       if (element1.classList.contains("onScreen")) {
@@ -300,12 +305,19 @@ smMenu.addEventListener("click", function (e) {
 });
 
 window.onresize = function () {
+  var myRange = document.getElementById("myRange");
+
   if (window.innerWidth > 1150) {
     sidebar.style.transform = "translateX(0%)";
   }
 
   if (window.innerWidth > 650) {
+    myRange.setAttribute("max", "50");
     slideMe.style.transform = "translateX(0%)";
+  }
+
+  if (window.innerWidth <= 650) {
+    myRange.setAttribute("max", "200");
   }
 };
 

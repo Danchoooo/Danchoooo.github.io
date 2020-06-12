@@ -1,3 +1,21 @@
+let active = document.querySelector(".active");
+let button = document.querySelectorAll(".button");
+let underline = document.querySelectorAll(".underline");
+let links = document.querySelectorAll(".links");
+let stat = document.querySelectorAll(".stat");
+let animate = document.querySelectorAll(".animate");
+let circle = document.querySelectorAll(".cirkle");
+let rotate = document.querySelectorAll(".rotate");
+let rotateBtn = document.querySelectorAll(".rotateBtn");
+const main = document.querySelector(".main");
+const mainResume = document.querySelector(".mainResume");
+const portfolio = document.querySelector(".portfolio");
+const blog = document.querySelector(".blog");
+const contact = document.querySelector(".contact");
+const scrollUp = document.querySelector(".window");
+let googleMap = document.querySelector(".map");
+let countMe = document.querySelectorAll(".count");
+
 //**Toggle Color Pallet**
 
 let move = document.querySelector(".move");
@@ -33,7 +51,7 @@ filters.forEach((element) => {
 
 //** Contact form animate the inputs on focus **
 
-focusEffect = document.querySelectorAll(".focusEffect");
+let focusEffect = document.querySelectorAll(".focusEffect");
 focusEffect.forEach((element) => {
   element.addEventListener("focus", () => {
     element.nextElementSibling.classList.remove("inputsAnimateOut");
@@ -71,9 +89,9 @@ myRange1.oninput = function () {
 };
 
 // ** Adding Functionality To The Slider Buttons **
-
 let butuns = document.querySelector(".butuns");
 let myCalc = 0;
+
 butuns.addEventListener("click", (e) => {
   if (e.target.classList.contains("butunsLeft")) {
     myRange.value = "0";
@@ -82,7 +100,6 @@ butuns.addEventListener("click", (e) => {
   }
   if (e.target.classList.contains("butunsRight") && window.innerWidth > 650) {
     myRange.value = "50";
-    myRange.setAttribute("max", "50");
     slideMe.style.transform = `translateX(-${myRange.value}%)`;
   }
   if (
@@ -91,7 +108,6 @@ butuns.addEventListener("click", (e) => {
     myCalc < 200
   ) {
     myRange.value += "100";
-    myRange.setAttribute("max", "200");
     myCalc += 100;
     slideMe.style.transform = `translateX(-${myRange.value}%)`;
   }
@@ -166,6 +182,12 @@ mainCol.addEventListener("click", (e) => {
 // ** Adding Some Classes And Animations On Window Load **
 
 window.onload = () => {
+  if (window.innerWidth > 650) {
+    myRange.setAttribute("max", "50");
+  }
+  if (window.innerWidth <= 650) {
+    myRange.setAttribute("max", "200");
+  }
   let bio = document.querySelector(".bio");
   setTimeout(() => {
     bio.classList.add("animate__animated", "animate__backInDown");
@@ -196,26 +218,9 @@ window.onload = () => {
 
 // ** Changing The Color From The Pallet On The Elements **
 
-let active = document.querySelector(".active");
-let button = document.querySelectorAll(".button");
-let underline = document.querySelectorAll(".underline");
-let links = document.querySelectorAll(".links");
-let stat = document.querySelectorAll(".stat");
-let animate = document.querySelectorAll(".animate");
-let circle = document.querySelectorAll(".cirkle");
-let rotate = document.querySelectorAll(".rotate");
-let rotateBtn = document.querySelectorAll(".rotateBtn");
-const main = document.querySelector(".main");
-const mainResume = document.querySelector(".mainResume");
-const portfolio = document.querySelector(".portfolio");
-const blog = document.querySelector(".blog");
-const contact = document.querySelector(".contact");
-const scrollUp = document.querySelector(".window");
-let googleMap = document.querySelector(".map");
-let countMe = document.querySelectorAll(".count");
-
 rotateBtn.forEach((element) => {
   element.addEventListener("click", () => {
+    window.scrollTo(0, 0);
     scrollUp.scrollTo(0, 0);
     rotate.forEach((element1) => {
       if (element1.classList.contains("onScreen")) {
@@ -301,11 +306,16 @@ smMenu.addEventListener("click", (e) => {
 });
 
 window.onresize = () => {
+  let myRange = document.getElementById("myRange");
   if (window.innerWidth > 1150) {
     sidebar.style.transform = "translateX(0%)";
   }
   if (window.innerWidth > 650) {
+    myRange.setAttribute("max", "50");
     slideMe.style.transform = "translateX(0%)";
+  }
+  if (window.innerWidth <= 650) {
+    myRange.setAttribute("max", "200");
   }
 };
 let mainMenue = document.querySelector(".ul1");
